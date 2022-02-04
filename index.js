@@ -120,8 +120,11 @@ function jogar(event) {
         barra.appendChild(peca)
         counter ++
         contador.textContent = counter
-        } if (torre_final.childElementCount == discosIn.value) { 
-            window.alert("Parabéns! Você terminou!!!")
+        } if (torre_final.childElementCount == discosIn.value && counter) { 
+            let winner = document.createElement("p")
+            winner.className = "winner"
+            winner.textContent ="Parabéns! Você terminou!!!"
+            body.appendChild(winner)
         } if (peca.clientWidth > barra.lastElementChild.clientWidth) {
             jogada = true
         }
