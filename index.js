@@ -66,6 +66,7 @@ function start(){
         torre_inicio.appendChild(pecaRed)
         counter = 0
         contador.textContent = counter
+    
     }
 
     if (discosIn.value == 4) {
