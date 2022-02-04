@@ -41,7 +41,7 @@ const box = document.createElement("div")
 box.className = "box"
 game.append(box)
 
-// niveis de dificuldade
+// niveis de dificuldade e reset
 const discosIn = document.createElement("input")
 discosIn.type = "number"
 discosIn.id = "quantity"
@@ -101,6 +101,15 @@ movimentos.innerText = "Movimentos"
 box.appendChild(movimentos)
 box.append(contador)
 
+
+//condição de vitória
+let winner = document.createElement("p")
+winner.className = "winner"
+winner.textContent ="Parabéns! Você terminou!!!"
+function victory(x) {
+    body.appendChild(x)
+}
+
 // codigo de funcionamento do jogo
 const torre = document.querySelectorAll(".torre")
 for (let i = 0; i < torre.length; i++) {
@@ -122,12 +131,14 @@ function jogar(event) {
         counter ++
         contador.textContent = counter
         } if (torre_final.childElementCount == discosIn.value && counter) { 
-            let winner = document.createElement("p")
-            winner.className = "winner"
-            winner.textContent ="Parabéns! Você terminou!!!"
-            body.appendChild(winner)
+            victory(winner)
+            setTimeout(() =>{
+                body.removeChild(winner)
+            }, 2000 )
+            
         } if (peca.clientWidth > barra.lastElementChild.clientWidth) {
             jogada = true
         }
     }
 }
+
