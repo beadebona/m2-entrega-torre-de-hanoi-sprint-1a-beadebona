@@ -121,8 +121,10 @@ let peca ;
 function jogar(event) {
  let barra = event.currentTarget
      if (jogada) {
-         peca = barra.lastElementChild
-         jogada = false
+         if (barra.childElementCount !== 0){
+             peca = barra.lastElementChild
+             jogada = false
+         }console.log(jogada)
     } else if (!jogada) {
         barra = event.currentTarget
         if (barra.lastElementChild === null || barra.lastElementChild.clientWidth > peca.clientWidth) {
