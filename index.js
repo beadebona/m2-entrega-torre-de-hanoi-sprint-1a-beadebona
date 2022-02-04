@@ -52,10 +52,10 @@ box.append(discosIn)
 box.append(reset)
 
 window.onload = start
-
+reset.addEventListener("click", start)
 discosIn.addEventListener("click",start)
 
-reset.addEventListener("click", start)
+
 
 function start(){
     
@@ -64,6 +64,8 @@ function start(){
         torre_inicio.appendChild(pecaBlue)
         torre_inicio.appendChild(pecaYellow)
         torre_inicio.appendChild(pecaRed)
+        counter = 0
+        contador.textContent = counter
     }
 
     if (discosIn.value == 4) {
@@ -71,7 +73,9 @@ function start(){
         torre_inicio.appendChild(pecaGreen)
         torre_inicio.appendChild(pecaBlue)
         torre_inicio.appendChild(pecaYellow)
-        torre_inicio.appendChild(pecaRed)    
+        torre_inicio.appendChild(pecaRed)  
+        counter = 0
+        contador.textContent = counter  
     }
 
     if (discosIn.value == 5) {
@@ -80,7 +84,9 @@ function start(){
         torre_inicio.appendChild(pecaGreen)
         torre_inicio.appendChild(pecaBlue)
         torre_inicio.appendChild(pecaYellow)
-        torre_inicio.appendChild(pecaRed) 
+        torre_inicio.appendChild(pecaRed)
+        counter = 0
+        contador.textContent = counter 
 
     }        
 }
