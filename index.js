@@ -86,8 +86,7 @@ function start(){
         torre_inicio.appendChild(pecaYellow)
         torre_inicio.appendChild(pecaRed)
         counter = 0
-        contador.textContent = counter 
-
+        contador.textContent = counter   
     }        
 }
 
@@ -97,7 +96,7 @@ let contador = document.createElement("span")
 contador.className = "contador"
 let movimentos = document.createElement("p")
 movimentos.className = "movimentos"
-movimentos.innerText = "Movimentos: "
+movimentos.innerText = "Movimentos"
 box.appendChild(movimentos)
 box.append(contador)
 
@@ -111,12 +110,9 @@ let jogada = true
 let peca ;
 function jogar(event) {
  let barra = event.currentTarget
-console.log(barra)
      if (jogada) {
          peca = barra.lastElementChild
          jogada = false
-
-         console.log(peca)
     } else if (!jogada) {
         barra = event.currentTarget
         if (barra.lastElementChild === null || barra.lastElementChild.clientWidth > peca.clientWidth) {
@@ -124,20 +120,10 @@ console.log(barra)
         barra.appendChild(peca)
         counter ++
         contador.textContent = counter
-        } if (torre_final.childElementCount == discosIn.value) {
-            let winner = document.createElement("p")
-            winner.className = "winner"
-            winner.innerText = "Parabéns! Você terminou!!!"
-            body.appendChild(winner)
+        } if (torre_final.childElementCount == discosIn.value) { 
+            window.alert("Parabéns! Você terminou!!!")
         } if (peca.clientWidth > barra.lastElementChild.clientWidth) {
             jogada = true
         }
     }
 }
-
-
-
-
-
-
-
